@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <pre>
+        <h3>Auto di chuyển phần tử cuối lên đầu</h3>
+        ** Sử dụng hàm last() để lấy ra phần tử cuối cùng
+        ** Sử dụng hàm prepend() để đưa lên đầu nội dung
+        ** Sử dụng setInterval() để tự động di chuyển
+    </pre>
+    
+    <div class="box">
+        <h3>Box title</h3>
+        <ul class="list">
+            <li>item 01</li>
+            <li>item 02</li>
+            <li>item 03</li>
+            <li>item 04</li>
+            <li>item 05</li>
+            <li>item 06</li>
+            <li>item 07</li>
+        </ul>
+    </div>
+    <button type="button" id="move">Auto Move to TOP</button> 
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#move").click(function(){
+                var auto = function(){
+                    var a = $(".list li").last();
+                    $(".list").prepend(a);
+                };
+                setInterval(auto, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

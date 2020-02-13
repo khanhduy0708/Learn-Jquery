@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        ul {
+          list-style: none;
+        }
+        body {
+          color: #383838;
+          font-family: Helvetica,sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .clearfix {
+          zoom: 1;
+        }
+        .clearfix:after {
+          clear: both;
+          content: ".";
+          display: block;
+          height: 0;
+          line-height: 0;
+          visibility: hidden;
+        }
+        .list li {
+          border: 1px solid #ccc;
+          float: left;
+          padding: 10px;
+          width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        Viết script fix chiều cao cho 2 thành phần bằng nhau
+        ** Sử dụng hàm first() và last() để xác định thứ tự phần tử
+            Hoặc eq(0) nếu có nhiều hơn 2 phần tử
+        ** Sử dụng hàm height() để lấy chiều cao của phần tử 
+        ** Dùng if else để so sánh và gán giá trị
+    </pre>
+    <ul class="list">
+        <li>orem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+    Sed id urna facilisis, fringilla ex nec, gravida est.</li>
+
+        <li>Praesent id porta turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+    Nam elit sapien, fringilla a turpis vel, pretium molestie nisi.<br>
+    Donec efficitur, quam eu auctor blandit,</li>
+    </ul>
+  </br></br></br></br></br></br></br></br></br>
+    <button type="" id="btn">Click to Fix Height</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                // Khởi tạo 2 biến a,b là chiều cao của 2 đoạn văn bản
+                var a = $("li").first().height();
+                var b = $("li").last().height();
+                // Nếu chiều cao li-1 ngắn hơn chiều cao của li-2 thì gán chiều cao của li-1 bằng chiều cao của li-2
+                if (a < b) {
+                    $("li").first().height(b);
+                } 
+                else { 
+                    $("li").last().height(a); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>

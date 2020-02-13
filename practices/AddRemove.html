@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <pre>
+        Thêm xóa phần tử cuối cùng sử dụng last()
+        remove(): xóa bỏ phần tử được chọn 
+
+        append(): thêm vào sau nội dung trong thẻ được chọn 
+        prepend(): thêm vào đầu nội dung trong thẻ được chọn
+        before(): thêm vào trước thẻ được chọn
+        after(): thêm vào sau thẻ được chọn
+
+        clone(): copy toàn bộ nội dung của thẻ được chọn
+    </pre>
+    <div class="box">
+        <h3>Box title</h3>
+        <ul class="list">
+            <li>item 01</li>
+            <li>item 02</li>
+            <li>item 03</li>
+            <li>item 04</li>
+            <li>item 05</li>
+            <li>item 06</li>
+            <li>item 07</li>
+        </ul>
+    </div>
+    <button type="button" id="remove">Remove</button> 
+    <button type="button" id="add">Add</button>
+    <button type="button" id="addAll">Add cả danh sách</button>
+    <button type="button" id="delAll">Del cả danh sách</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Tạo hàm remove
+            $("#remove").click(function(){
+                // ::gt(0) chặn ko cho xóa phần tử đầu tiên
+                $(".list li:gt(0)").last().remove();
+            });
+            // Tạo hàm add
+            $("#add").click(function(){
+                $(".list").append("<li>new item</li>");
+            });
+            // Tạo hàm add cả danh sách dùng hàm clone()
+            $("#addAll").click(function(){
+                var elm = $(".box").clone();
+                $(".box").last().after(elm);
+            });
+            // Tạo hàm remove danh sách trừ phần tử đầu tiên
+            $("#delAll").click(function(){
+                $(".box:gt(0)").last().remove();
+            });
+        });
+    </script>
+</body>
+</html>

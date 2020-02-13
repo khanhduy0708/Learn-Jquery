@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#box").html(
+                    '<ul>'
+                        + '<li>Canh chua cá kho.</li>'
+                        + '<li>Bí xào bò.</li>'
+                        + '<li>Bí đỏ hầm đuôi heo.</li>'
+                        + '<li>Sườn non kho ớt.</li>'
+                        + '</ul>');    
+            });
+        });
+    </script>
+</head>
+<body>
+    <pre>
+        Sử dụng hàm html() để thay đổi html
+    </pre>
+    
+    <div id="box">
+        <h3>Title</h3>
+        <div>In suscipit nec velit sit amet convallis. Integer</div>
+    </div>
+        <button type="button">Click</button>
+        
+</body>
+</html>

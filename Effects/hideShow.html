@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <pre>
+            <h1>Syntax: kết hợp sự kiện Click()</h1>
+            $(selector).hide(speed,callback);
+            $(selector).show(speed,callback);
+            $(selector).toggle(speed,callback);
+        </pre>
+        <div><button id="toggle">Click me</button></div>
+        <div><p id="paragrap">Đây là đoạn văn bản số 1</p></div>
+                    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("p").toggle();                    
+                });
+            });
+        </script>
+    </body>
+</html>

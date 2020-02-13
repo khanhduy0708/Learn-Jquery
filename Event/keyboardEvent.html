@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Keypress: đếm số ký tự</h1>
+        <pre>
+            val(): hàm lấy nội dung thẻ input hoặc textarea
+            html(): hàm xuất nội dung
+        </pre>
+
+        <div id="content" style="margin: 10px;">
+            <label>Nhập nội dung: </label>
+            <textarea name="content" style="width: 50%; height: 50px"></textarea>
+        </div>
+
+        <div id="count" style="margin: 5px;">
+            <p>Keypress: <span id="countCharacter"></span></p>
+        </div>
+
+        <div id="trigger" style="margin: 5px;">
+            <button id="trigger">Ấn để keypress</button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+        /*  $(document).ready(function(){
+                $("textarea[name='content']").keypress(function(){
+                    // val(): hàm lấy nội dung thẻ input hoặc textarea
+                    // html(): hàm xuất nội dung 
+                    var value = $(this).val();
+                    $("#countCharacter").html(value.length);
+                });
+            }); */
+            i = 0;
+            $(document).ready(function(){
+                $("textarea[name='content']").keypress(function(){
+                    $("#countCharacter").text(i += 1);
+                });
+                // Trigger 
+                $("p").keypress(function(){
+                    $("#countCharacter").text(i += 1);
+                });
+                $("#trigger").click(function(){
+                    $("p").keypress();
+                });
+            });
+
+        </script>
+    </body>
+</html>

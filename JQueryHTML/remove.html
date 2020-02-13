@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        div {
+            border: solid red 1px;
+            background-color: yellow;
+            display: inline-block;
+            padding: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phương Thức Remove() và Empty(): </h1>
+    <pre>
+        Remove(): Xóa bỏ thẻ
+        Empty(): Xóa bỏ nội dung của thẻ
+    </pre>
+    <div id="remove" style="width:150px; height:60px">
+        <p>xóa remove</p>
+    </div>
+    <div id="empty" style="width:150px; height:60px">
+        <p>xóa empty</p>
+    </div>
+</br></br></br>
+    <button id="btn1">Remove</button>
+    <button id="btn2">Empty</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Xóa Remove()
+            $("#btn1").click(function(){
+                $("#remove").remove();
+            });
+            // Xóa nội dung Empty()
+            $("#btn2").click(function(){
+                $("#empty").empty();
+            });
+        });
+    </script>
+</body>
+</html>

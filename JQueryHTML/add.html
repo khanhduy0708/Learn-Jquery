@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h1>Các Phương Thức Thêm Dữ Liệu: (áp dụng cùng hàm click() )</h1>
+    <pre>
+        append(): Thêm vào sau nội dung của thẻ được chọn
+        prepend(): Thêm vào trước nội dung của thẻ được chọn
+        before(): Thêm vào trước thẻ đc chọn
+        after(): Thêm vào sau thẻ đc chọn
+    </pre>
+
+    <p id="p1">dãy số: </p>
+    <p id="p2">dãy số: 10</p>
+    <img id="pic" src="pic1.jpg" alt="" width="50px" height="50px"> </br></br>
+    <button id="append">append()</button>
+    <button id="prepend">prepend()</button> </br></br></br>
+    <button id="before">before()</button>
+    <button id="after">after()</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#append").click(function(){
+                var i = 1;
+                while( i <= 10 ){
+                    $("#p1").append(" " + i + " ");
+                    i++;
+                }          
+            });
+            $("#prepend").click(function(){
+                $("#p2").prepend(" <b>prepend</b> ");      
+            });
+            $("#before").click(function(){
+                $("#pic").before(" <b>before</b> ");      
+            });
+            $("#after").click(function(){
+                $("#pic").after(" <b>after</b> ");      
+            });
+
+        });
+    </script>
+</body>
+</html>

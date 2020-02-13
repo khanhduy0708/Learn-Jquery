@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <pre>
+        Nhập vào 2 số a và b
+        Khai báo 1 hàm so sánh 2 số và xuất ra số lớn hơn
+        ** Sử dụng hàm click() và text() để xuất dữ liệu
+    </pre>
+    
+    <label for="">Nhập a: </label>
+    <input type="text" name="" id="a"> </br>
+    <label for="">Nhập b: </label>
+    <input type="text" name="" id="b">
+</br></br>
+    <button id="btn"> Click để so sánh </button> </br></br>
+    <label for="">Số lớn hơn là: </label>
+    <label id="result"></label>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // khai báo hàm so sánh 2 số
+            var sosanh = function(x,y){
+                if (x > y) {
+                    return x;
+                } else return y;
+            };
+            $("#btn").click(function(){
+                var a = $("#a").val();
+                var b = $("#b").val();
+                $("#result").text(sosanh(a,b));
+            }); 
+        });    
+    </script>
+</body>
+</html>

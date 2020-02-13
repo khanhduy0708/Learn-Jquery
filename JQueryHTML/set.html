@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h1>Các phương thức gán dữ liệu:</h1>
+    <pre>
+        text(): gán giá trị là văn bản
+        html(): gán giá trị là văn bản bao gồm cả các thẻ html
+        val(): gán giá trị của form
+        attr(): gán lại giá trị thuộc tính của thẻ html
+    </pre>
+    
+    <p id="p1">đặt lại với text()</p>
+    <p id="p2">đặt lại với html()</p>
+    <button id="btn1">set text</button>
+    <button id="btn2">set html</button>
+</br></br></br>
+    <label for="">Nhập data: </label>
+    <input type="text" name="" id="value" value="đăt lại với val()">
+    <button id="btn3">set val</button>
+</br></br></br>
+   
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // gán lại giá trị cho văn bản p1
+            $("#btn1").click(function(){
+                $("#p1").text("Hello World");
+            });
+            // gán lại giá trị cho văn bản p2 thêm thẻ <b> in đậm
+            $("#btn2").click(function(){
+                $("#p2").html("<b>Hello World</b>");
+            });
+            $("#btn3").click(function(){
+                $("#value").val("Hi World");
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        .border {
+            border-color: red;
+            border-style: solid;
+            border-radius: 2px;
+            border-width: 1px;
+        }
+        .font {
+            font-size: x-large;
+            font-weight: bold;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phương thức thêm xóa CSS Class: </h1>
+    <pre>
+        addClass(): thêm 1 hoặc nhiều class css vào thẻ được chọn
+        removeClass(): xóa 1 hoặc nhiều class css của thẻ được chọn
+        toggleClass(): chuyển đổi giữa thêm và xóa class css
+        css(): đặt thuộc tính cho class css
+            cú pháp: css("propertyname","value"); ví dụ: $("p").css("background-color", "yellow");
+                     css({"propertyname":"value","propertyname":"value",...}); // nhiều thuộc tính
+                     css("propertyname"); // return trả về thuộc tính
+    </pre>
+
+    <div id="div1">Review addClass</div>
+    <div id="div2" class="font">Review removeClass</div>
+    <div id="div3">Review toggleClass</div>
+</br>
+    <button id="addClass">addClass()</button>
+    <button id="removeClass">removeClass()</button>
+    <button id="toggleClass">toggleClass()</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // thêm class css
+            $("#addClass").click(function(){
+                $("#div1").addClass("border font")
+            });
+            // xóa class css 
+            $("#removeClass").click(function(){
+                $("#div2").removeClass("font")
+            });
+            $("#toggleClass").click(function(){
+                $("#div3").toggleClass("border font")
+            });
+        });
+    </script>
+</body>
+</html>

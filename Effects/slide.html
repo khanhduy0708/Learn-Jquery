@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        #slide, #toggle {
+            background-color: gray;
+            text-align: center;
+            padding: 5px;
+            border: solid 1px gray;
+        }
+        #slide {
+        padding: 50px;
+        display: none;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        <h1>Kết hợp sự kiện Click() tạo hiệu ứng Slide</h1>
+        $(selector).slideUp(speed,callback);
+        $(selector).slideDown(speed,callback);
+        $(selector).slideToggle(speed,callback);
+    </pre>
+
+    <div id="toggle">
+        <button class="btn1" style="padding: 5px;">Click here show slide</button>
+    </div>
+    <div id="slide">Hello Sir</div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#toggle").click(function(){
+                $("#slide").slideToggle();
+            });
+        });
+    </script>
+    
+</body>
+</html>

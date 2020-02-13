@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Form Event</h1>
+        <pre>
+            submit()
+            change()
+            focus() trỏ đến 
+            blur() ko trỏ đến 
+        </pre>
+        <div class="container">
+            <div class="row">            
+                <div class="col-sm-12" style="margin: 10px;">
+                    <form name="register" action="" method="post">
+                        <div class="form-group" style="margin: 10px;">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group" style="margin: 10px;">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="username">
+                        </div>
+                        <div class="form-group" style="margin: 10px;">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+            
+                        <div class="form-group" style="margin: 10px;">
+                            <label>Gender</label>
+                             <input type="radio" name="gender" value="male"> Male
+                             <input type="radio" name="gender" value="female"> Female
+                        </div>
+
+                        <div class="form-group" style="margin: 10px;">
+                            <label>Location</label>
+                            <select name="location">
+                                <option value="hanoi">Ha noi</option>
+                                <option value="hochiminh">Ho chi minh</option>
+                                <option value="danang">Da nang</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("input[type='text']").focus(function() {
+                    $(this).css("border", "solid green");
+                });
+                $("input[type='text']").blur(function(){
+                    $(this).css("border", "solid red");
+                });
+                $("select").focus(function() {
+                    $(this).css("border", "solid green");
+                });
+                $("select").blur(function() {
+                    $(this).css("border", "solid red");
+                });
+                // hàm submit
+                $("form[name='register']").submit(function(){
+                    var email = $("input[name='email']").val();
+                    var username = $("input[name='username']").val();
+                    var password = $("input[name='password']").val();
+                    var gender = $("input[name='gender']").val();
+                    if ((email == '') || (username == '') || (password == '') || (gender == '')){
+                        alert("Bạn chưa nhập đầy đủ thông tin");
+                    };                     
+                });
+            });
+        </script>
+    </body>
+</html>

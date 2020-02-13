@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tab-list li {
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+            padding: 5px 10px;
+        }
+        .tab-list li.active {
+            background-color: #aaf0f7;
+        }
+        .tab-content {
+            border: 3px solid #eee;
+            height: 200px;
+            margin-top: 5px;
+            padding: 10px;
+            width: 600px;
+        }
+        .box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        <h3>Show nôi dung dạng tab</h3>
+        ** Sử dụng index() để lấy thứ tự được chọn
+        ** Sử dụng :eq(0) 
+    </pre>
+
+    <ul class="tab-list">
+        <li class="active">Tab 01</li>
+        <li>Tab 02</li>
+        <li>Tab 03</li>
+    </ul>
+    <div class="tab-content">
+        <div class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="box">Sed porttitor turpis risus, vitae sodales neque vulputate ut.</div>
+        <div class="box">In suscipit nec velit sit amet convallis. Integer.</div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // chọn phần tử đầu tiên sử dụng cú pháp :eq(0)
+            $(".box:eq(0)").show();
+            $(".tab-list li").click(function(){
+
+                // Xóa class của tab đã active 
+                $("li").removeClass("active");
+
+                // Thêm class active cho tab đc chọn
+                $(this).addClass("active");
+
+                // xác định phần tử thứ n được click dùng hàm index()
+                var n = $(".tab-list li").index(this);
+
+                // Ẩn tất cả nội dung để chỉ hiện nội dung được chọn
+                $(".box").hide();
+
+                // Show nội dung tab thứ n được chọn
+                $(".box:eq("+ n +")").show();
+            });
+        });
+    </script>
+</body>
+</html>

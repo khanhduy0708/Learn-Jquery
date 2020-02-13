@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h1>Các phương thức lấy dữ liệu:</h1>
+    <pre>
+        text(): trả về giá trị là văn bản
+        html(): trả về giá trị là văn bản bao gồm cả các thẻ html
+        val(): trả về giá trị của form
+        attr(): trả về thuộc tính của thẻ html
+    </pre>
+    
+    <p>Đây là đoạn văn bản <b>IN ĐẬM</b> blablablabla</p>
+    <button id="btn1">get text</button>
+    <button id="btn2">get html</button>
+</br></br></br>
+    <label for="">Nhập data: </label>
+    <input type="text" name="" id="value">
+    <button id="btn3">get val</button>
+</br></br></br>
+    <img id="pic" name="anh đầu bếp" src="about_img_1.jpg" width="500px" height="250px"> </br></br>
+    <button id="btn4">get attr</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert("Get text:  " + $("p").text());
+            });
+            $("#btn2").click(function(){
+                alert("Get html:  " + $("p").html());
+            });
+            $("#btn3").click(function(){
+                alert("Get val:  " + $("#value").val());
+            });
+            $("#btn4").click(function(){
+                alert("Get name of picture:  " + $("#pic").attr("name"));
+            });
+        });
+
+    </script>
+</body>
+</html>
